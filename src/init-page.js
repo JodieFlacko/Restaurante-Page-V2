@@ -15,12 +15,10 @@ function createSlider(){
   ];
 
   const sliderWrapper = document.createElement("div");
-  sliderWrapper.className = "slider-wrapper";
-
   const slider = document.createElement("div");
-  slider.className = "slider";
-
   const sliderNav = document.createElement("div");
+  sliderWrapper.className = "slider-wrapper";
+  slider.className = "slider";
   sliderNav.className = "slider-nav";
 
   for(let i = 0; i < 3; i++){

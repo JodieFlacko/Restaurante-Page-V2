@@ -92,5 +92,9 @@ header nav{
   opacity: 100%;
 }
 
-/*  */
+/* Contact Page */
 
+.contacts-section-one .icon-div img{
+  width: 32;
+  height: 32;
+}
