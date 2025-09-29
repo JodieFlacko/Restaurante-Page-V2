@@ -2,7 +2,7 @@ import emailIcon from "./assets/svgs/email-open.svg";
 import phoneIcon from "./assets/svgs/phone.svg";
 import mapIcon from "./assets/svgs/map-marker.svg";
 
-export function loadContactsPage(doc){
+export function loadContactsPage(content){
   const container = document.createElement("div");
 
   const firstSection = createSectionOne();
@@ -12,7 +12,7 @@ export function loadContactsPage(doc){
 
   const sections = [firstSection, secondSection, formSection, mapSection];
   appendMultipleChildren(container, sections);
-  doc.appendChild(container);
+  content.appendChild(container);
 };
 
 function createSectionOne(){

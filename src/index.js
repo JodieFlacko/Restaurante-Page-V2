@@ -1,8 +1,10 @@
 import "./styles/styles.css";
 import "./styles/css-reset-by-Josh-Cameau.css";
-import { initialPageLoad } from "./init-page";
-import { loadMenuPage } from "./menu-page";
-import { loadContactsPage } from "./contacts-page";
+import { loadHomePage } from "./load-home-page";
+import { addListeners } from "./add-listeners";
 
 const content = document.querySelector("#content");
-loadContactsPage(content);
+const nav = document.querySelector("#nav");
+
+loadHomePage(content)
+addListeners(nav);

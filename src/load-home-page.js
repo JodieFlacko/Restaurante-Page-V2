@@ -1,4 +1,4 @@
-function initialPageLoad(content){
+function loadHomePage(content){
   const pageContainer = document.createElement("div");
   pageContainer.className = "init-page-container"; 
   
@@ -23,13 +23,13 @@ function createSlider(){
 
   for(let i = 0; i < 3; i++){
     const sliderImage = document.createElement("img");
-    sliderImage.id = "slide " + i;
+    sliderImage.id = "slide-" + i;
     sliderImage.src = imageURLs[i];
     sliderImage.alt = "3D rendering of pizza image";
     slider.appendChild(sliderImage);
 
     const navBullet = document.createElement("a");
-    navBullet.href = "#slide " + i;
+    navBullet.href = "#slide-" + i;
     sliderNav.appendChild(navBullet);
   };
 
@@ -39,4 +39,4 @@ function createSlider(){
   return sliderWrapper;
 };
 
-export { initialPageLoad };
+export { loadHomePage };
