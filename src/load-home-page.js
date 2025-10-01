@@ -1,3 +1,7 @@
+import slide1 from "./assets/slides/slide1.png";
+import slide2 from "./assets/slides/slide2.png";
+import slide3 from "./assets/slides/slide3.png";
+
 function loadHomePage(content){
   const pageContainer = document.createElement("div");
   pageContainer.className = "init-page-container"; 
@@ -9,9 +13,7 @@ function loadHomePage(content){
 
 function createSlider(){
   const imageURLs = [
-    "https://images.pexels.com/photos/16994473/pexels-photo-16994473.jpeg",
-    "https://images.pexels.com/photos/30305404/pexels-photo-30305404.jpeg",
-    "https://images.pexels.com/photos/33240983/pexels-photo-33240983.jpeg",
+    slide1, slide2, slide3,
   ];
 
   const sliderWrapper = document.createElement("div");

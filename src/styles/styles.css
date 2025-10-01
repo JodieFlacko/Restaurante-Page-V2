@@ -21,6 +21,7 @@
   --smooth-blue: 198, 29%, 84%;
   --strong-blue: 204, 35%, 40%;
   --font-color: 203, 46%, 14%;
+  --icon-filter: brightness(0) saturate(100%) invert(40%) sepia(25%) saturate(1200%) hue-rotate(170deg) brightness(95%) contrast(90%);
 } 
 
 body{
@@ -121,7 +122,6 @@ nav button:hover{
   flex: 1 0 100%;
   scroll-snap-align: start;
   object-fit: cover;
-  opacity: 0.9;
 }
 
 .slider-nav{
@@ -176,17 +176,22 @@ footer{
 
 footer a{
   transition: all ease-in-out .2s;
-}
-
-footer a:link{
   text-decoration: none;
   color: inherit;
 }
 
-footer a:hover{
-  color: hsla(var(--font-color), 0.8);
+footer a,
+footer a:link,
+footer a:visited {
+  color: inherit;
+  transition: all ease-in-out .2s;
+  text-decoration: none;
 }
 
+footer a:hover,
+footer a:active {
+  color: hsl(var(--strong-blue));
+}
 .footer-content{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -199,6 +204,15 @@ footer a:hover{
   align-items: stretch;
   align-content: end;
   row-gap: .5rem;
+}
+
+.footer-section a{
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.footer-section .icon:hover{
+  filter: var(--icon-filter);
 }
 
 .footer-section .last-el{

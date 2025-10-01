@@ -6,5 +6,5 @@ import { addListeners } from "./add-listeners";
 const content = document.querySelector("#content");
 const nav = document.querySelector("#nav");
 
-loadHomePage(content)
+loadHomePage(content);
 addListeners(nav);
