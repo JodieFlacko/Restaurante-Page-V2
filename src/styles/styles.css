@@ -15,19 +15,26 @@
 }
 
 :root {
-  --dark-green: 125, 28%, 15%;
+  /* --dark-green: 125, 28%, 15%;
   --hard-red: 345, 41%, 15%;
   --beige: 27, 20%, 55%;
   --smooth-blue: 198, 29%, 84%;
   --strong-blue: 204, 35%, 40%;
   --font-color: 203, 46%, 14%;
+  --dark-blue: 203, 25%, 6%; */
+  --caf-noir: 36, 88%, 14%;
+  --tan: 29, 50%, 69%;
+  --blood-red: 10, 85%, 21%;
+  --rust: 18, 85%, 40%;
+  --butterscotch: 30, 71%, 55%;
+  --grey: 27, 4%, 49%;
   --icon-filter: brightness(0) saturate(100%) invert(40%) sepia(25%) saturate(1200%) hue-rotate(170deg) brightness(95%) contrast(90%);
 } 
 
 body{
   font-family:  'airbnbcereal_regular','Times New Roman', Times, serif;
   width: 100%;
-  background-color: hsla(var(--smooth-blue), .12);
+  background-color: hsla(var(--grey), .8);
 }
 
 /* Wrapper */
@@ -65,7 +72,7 @@ nav button{
   padding: 6px 3px;
   width: 80%;
   text-align: start;
-  color: hsl(var(--strong-blue));
+  color: hsl(var(--smooth-blue));
   transition: all 0.3s ease-in-out;
 }
 
