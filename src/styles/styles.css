@@ -23,18 +23,20 @@
   --font-color: 203, 46%, 14%;
   --dark-blue: 203, 25%, 6%; */
   --caf-noir: 36, 88%, 14%;
+  --cream: 60, 10%, 92%;
   --tan: 29, 50%, 69%;
   --blood-red: 10, 85%, 21%;
   --rust: 18, 85%, 40%;
   --butterscotch: 30, 71%, 55%;
-  --grey: 27, 4%, 49%;
+  --grey: 40, 4%, 14%;
   --icon-filter: brightness(0) saturate(100%) invert(40%) sepia(25%) saturate(1200%) hue-rotate(170deg) brightness(95%) contrast(90%);
 } 
 
 body{
   font-family:  'airbnbcereal_regular','Times New Roman', Times, serif;
   width: 100%;
-  background-color: hsla(var(--grey), .8);
+  background-color: hsl(var(--grey));
+  color: hsla(var(--cream), 1);
 }
 
 /* Wrapper */
@@ -59,25 +61,26 @@ header nav{
   row-gap: 2rem;
   padding: 3rem 1.8rem;
   align-items: flex-start;
-  border-right: 1px solid hsl(var(--smooth-blue));
+  border-right: 1px solid hsl(var(--cream));
   height: 100%;
 }
 
 nav button{
   border: none;
-  border-bottom: 1px solid hsl(var(--smooth-blue));
+  border-bottom: 1px solid hsl(var(--cream));
   background-color: transparent;
   cursor: pointer;
   font-weight: bold;
   padding: 6px 3px;
   width: 80%;
   text-align: start;
-  color: hsl(var(--smooth-blue));
+  color: inherit;
   transition: all 0.3s ease-in-out;
 }
 
 nav button:hover{
-  color: hsla(var(--strong-blue), 0.6);
+  color: hsla(var(--cream), 0.6);
+  border-bottom: 1px solid hsl(var(--cream), 0.6);
 }
 
 /* Content */
@@ -104,7 +107,6 @@ nav button:hover{
   position: relative;
   margin: 0 auto;
   height: 100vh;
-  padding: 5rem 10rem;
 }
 
 .slider {
@@ -113,12 +115,42 @@ nav button:hover{
   height: 100%;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  box-shadow: 0 0 4rem .75rem hsla(0, 0%, 0%, 0.25);
+  box-shadow: 
+    inset 0 0 100px 20px hsla(var(--grey), .8),
+    0 10px 50px -10px hsla(0, 0%, 0%, 0.15);
   overflow-x: scroll;
   overflow-y: hidden;
   scrollbar-width: none; /* Hide scrollbar */
   -ms-overflow-style: none;
-  border-radius: 10px;
+  /* test */
+   /* mask-image: 
+    linear-gradient(
+      to bottom,
+      black 0%,
+      black 90%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 100%
+    );
+  mask-composite: intersect;
+  -webkit-mask-image: 
+    linear-gradient(
+      to bottom,
+      black 0%,
+      black 99.5%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 100%
+    );
+  -webkit-mask-composite: source-in; */
 }
 
 .slider::-webkit-scrollbar {
@@ -177,7 +209,7 @@ footer{
   display: grid;
   grid-template-rows: 1fr .5fr;
   row-gap: 3rem;
-  color: hsl(var(--font-color));
+  color: inherit;
   padding: 3rem 250px 0;
 }
 
