@@ -29,7 +29,8 @@
   --rust: 18, 85%, 40%;
   --butterscotch: 30, 71%, 55%;
   --grey: 40, 4%, 14%;
-  --icon-filter: brightness(0) saturate(100%) invert(40%) sepia(25%) saturate(1200%) hue-rotate(170deg) brightness(95%) contrast(90%);
+  --cream-filter: brightness(0) saturate(100%) invert(98%) sepia(8%) saturate(385%) hue-rotate(358deg) brightness(102%) contrast(92%);
+  --rust-filter: brightness(0) saturate(100%) invert(25%) sepia(89%) saturate(2087%) hue-rotate(13deg) brightness(94%) contrast(104%);
 } 
 
 body{
@@ -59,7 +60,7 @@ header nav{
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
-  padding: 3rem 1.8rem;
+  padding: 1.2rem 1.8rem 3rem;
   align-items: flex-start;
   border-right: 1px solid hsl(var(--cream));
   height: 100%;
@@ -75,12 +76,19 @@ nav button{
   width: 80%;
   text-align: start;
   color: inherit;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 nav button:hover{
   color: hsla(var(--cream), 0.6);
   border-bottom: 1px solid hsl(var(--cream), 0.6);
+}
+
+nav .nav-logo{
+  margin-left: 22px;
+  margin-bottom: 52px;
+  width: 132;
+  height: 132;
 }
 
 /* Content */
@@ -168,7 +176,7 @@ nav button:hover{
   column-gap: 2rem;
   position: absolute;
   left: 50%;
-  bottom: 7rem;
+  bottom: 3rem;
   transform: translateX(-50%);
   z-index: 1;
 }
@@ -201,7 +209,7 @@ nav button:hover{
 
 footer{
   grid-row: 2/3;
-  border-top: 1px solid hsl(var(--smooth-blue));
+  border-top: 1px solid hsl(var(--cream));
   height: 100%;
   width: 100%;
   position: relative;
@@ -211,6 +219,10 @@ footer{
   row-gap: 3rem;
   color: inherit;
   padding: 3rem 250px 0;
+}
+
+footer img, .nav-logo{
+  filter: var(--cream-filter);
 }
 
 footer a{
@@ -229,7 +241,7 @@ footer a:visited {
 
 footer a:hover,
 footer a:active {
-  color: hsl(var(--strong-blue));
+  color: hsla(var(--cream), 0.5);
 }
 .footer-content{
   display: grid;
@@ -251,11 +263,11 @@ footer a:active {
 }
 
 .footer-section .icon:hover{
-  filter: var(--icon-filter);
+  filter: var(--rust-filter);
 }
 
 .footer-section .last-el{
-  border-top: 1px solid hsl(var(--smooth-blue));
+  border-top: 1px solid hsl(var(--cream));
   padding-top: 1.5rem;
 }
 
