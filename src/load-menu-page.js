@@ -23,47 +23,47 @@ function createMenu(){
       {
         name: "MARGHERITA",
         desc: "Pomodoro San Marzano, fiordilatte, olio EVO, basilico. Si consiglia la variante 'MARGHERITA DI MASTRO STEFANO', con aggiunta di origano del Matese.",
-        price: "7,00€",
+        price: "7,00",
       },
       {
         name: "MARGHERITA DOP",
         desc: "Pomodoro San Marzano DOP, mozzarella di Bufala Campana DOP, olio EVO",
-        price: "9,50€",
+        price: "9,50",
       },
       {
         name: "MARINARA CLASSICA",
         desc: "Pomodoro San Marzano, origano, aglio, olio EVO",
-        price: "6,00€",
+        price: "6,00",
       },
       {
         name: "SCHIACCIATA",
         desc: "Sale, origano, olio EVO",
-        price: "4,00€",
+        price: "4,00",
       },
       {
         name: "LA BOSCAIOLA",
         desc: "Pomodoro San Marzano, fiordilatte, funghi, speck IGP, origano, olio Evo",
-        price: "8,00€",
+        price: "8,00",
       },
       {
         name: "LA PICCANTE",
         desc: "Fiordilatte, pomodoro San Marzano, salame piccante, origano e olio Evo.",
-        price: "8,00€",
+        price: "8,00",
       },
       {
         name: "CALZONE CLASSICO",
         desc: "Fiordilatte, pomodoro San Marzano, prosciutto cotto, basilico, olio Evo",
-        price: "8,50€",
+        price: "8,50",
       },
       {
         name: "4 STAGIONI",
         desc: "Pomodoro San Marzano, fiordilatte, carciofi Paestum, funghi, capperi, filetti di alici Cetara, olive, prosciutto cotto, olio Evo, origano",
-        price: "9,00€",
+        price: "9,00",
       },
       {
         name: "CAPRICCIOSA",
         desc: "Pomodoro San Marzano, fiordilatte, capperi, filetti di alici Cetara, prosciutto cotto, carciofini Paestum, funghi, olive caiazzane, origano, olio Evo",
-        price: "9,00€",
+        price: "9,00",
       },
     ];
 
@@ -80,7 +80,8 @@ function createMenu(){
       "https://www.pepeingrani.it/imgresizer.php?w=75&h=75&src=https://www.pepeingrani.it/storage/2023/03/16/1679008341_746.jpg",
       "https://www.pepeingrani.it/imgresizer.php?w=75&h=75&src=https://www.pepeingrani.it/storage/2023/03/16/1679008208_467.jpg",
     ];
-    const menuList = document.createElement("div");
+    const menuList = document.createElement("ul");
+    menuList.className = "menu-list";
 
     for(let i = 0; i < NUMBER_OF_PIZZAS; i++){
       const pizzaLi = document.createElement("li");

@@ -31,6 +31,7 @@
   --grey: 40, 4%, 14%;
   --cream-filter: brightness(0) saturate(100%) invert(98%) sepia(8%) saturate(385%) hue-rotate(358deg) brightness(102%) contrast(92%);
   --rust-filter: brightness(0) saturate(100%) invert(25%) sepia(89%) saturate(2087%) hue-rotate(13deg) brightness(94%) contrast(104%);
+  --butterscotch-filter: brightness(0) saturate(100%) invert(64%) sepia(85%) saturate(507%) hue-rotate(332deg) brightness(93%) contrast(86%);
 } 
 
 body{
@@ -45,7 +46,6 @@ body{
 .wrapper{
   display: grid;
   grid-template-columns: 1fr 5.5fr;
-  
 }
 
 /* Nav Bar */
@@ -166,6 +166,53 @@ nav .nav-logo{
   opacity: 100%;
 }
 
+/* Menu Page */
+
+.menu-list{
+  list-style-type: none;
+  padding: 140px 0;
+}
+
+.pizza-item{
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  column-gap: 2rem;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  padding: 3rem;
+  border-bottom: 1px solid hsla(var(--cream), .7);
+  width: 60%;
+  margin: 0 auto;
+  transition: all .3s ease;
+}
+
+.pizza-item:hover{
+  background-color: hsla(var(--cream), .1);
+}
+
+.pizza-item-container{
+  justify-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pizza-logo{
+  border-radius: 50%;
+}
+
+.pizza-name{
+  color: hsl(var(--butterscotch));
+  font-weight: bold;
+}
+
+.pizza-price{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 /* Contact Page */
 
 .contacts-section-one .icon-div img{
@@ -231,7 +278,7 @@ footer a:active {
 }
 
 .footer-section .icon:hover{
-  filter: var(--rust-filter);
+  filter: var(--butterscotch-filter);
 }
 
 .footer-section .last-el{
