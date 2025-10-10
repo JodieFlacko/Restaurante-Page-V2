@@ -4,6 +4,7 @@ import mapIcon from "./assets/svgs/map-marker.svg";
 
 export function loadContactsPage(content){
   const container = document.createElement("div");
+  container.className = "contacts-sections-container";
 
   const firstSection = createSectionOne();
   const secondSection = createSectionTwo();
@@ -66,6 +67,7 @@ function createSectionOne(){
 
     purpose.textContent = item.purpose;
     desc.textContent = item.desc;
+    actionLink.textContent = item.action;
 
     logoImg.src = item.icon;
     actionLink.href = item.link;
@@ -85,7 +87,8 @@ function createSectionOne(){
   };
 
   section.appendChild(container);
-  section.className = "contacts-section-one"
+  section.className = "contacts-section-one";
+  container.className = "section-one-container";
   return section;
 };
 
@@ -95,11 +98,13 @@ function createSectionTwo(){
   const header = document.createElement("div");
   const headerLabel = document.createElement("span");
   const headerText = document.createElement("h4");
-
+  
   headerLabel.className = "header-label";
   headerText.className = "header-text";
+  container.className = "section-two-container";
+  header.className = "section-two-header";
 
-  headerLabel.textContent = "Address and Opening Hours";
+  headerLabel.textContent = "ADDRESS AND OPENING HOURS";
   headerText.textContent = "Come Visit Us";
   
   header.appendChild(headerLabel);
@@ -108,12 +113,12 @@ function createSectionTwo(){
   
   const locationData = [
     {
-      firstRow: "Address\nVia Marechiaro, Posillipo, Napoli, NA, Italy",
+      firstRow: "Via Marechiaro\n80123 Posillipo (NA), Italy",
       secondRow: "GPS Coordinates\n40.795982, 14.193196",
       thirdRow: "Phone\n+39 123 456 789",
     },
     {
-      firstRow: "Opening Hours\nOpen Tuesday to Saturday from 6:30 PM to 12:30 AM",
+      firstRow: "Open Tuesday to Saturday from 6:30 PM to 12:30 AM",
       secondRow: "Sunday Hours\nOpen Sunday from 6:45 PM to 12:30 AM",
       thirdRow: "Closed on Monday",
     },
@@ -121,6 +126,7 @@ function createSectionTwo(){
 
   for(let data of locationData){
     const squareCell = document.createElement("div");
+    squareCell.className = "square-cell-section-two";
     for(let row in data){
       const div = document.createElement("div")
       const par = document.createElement("p");
@@ -138,23 +144,36 @@ function createSectionTwo(){
 
 function createContactFormSection(){
   const section = document.createElement("section");
-  const container = document.createElement("div");
+  const container = document.createElement("div");  
+
+  container.className = "form-section-container";
 
   const background = document.createElement("div");
-  background.className = "background";
+  background.className = "form-image";
   const formDiv = document.createElement("div");
   const form = document.createElement("form");
 
+
+  formDiv.className = "form-container";
   const formTitle = document.createElement("h5");
   const formDesc = document.createElement("p");
+
+  formTitle.textContent = "Contact Us!";
+  formDesc.textContent = "The following form is valid only for general information"
 
   form.appendChild(formTitle);
   form.appendChild(formDesc);
   formDiv.appendChild(form);
 
   const inputs = createFormInputs();
+  const formButton = createFormButton();
 
   inputs.forEach(input => form.appendChild(input));
+  form.appendChild(formButton);
+
+  form.addEventListener("submit", (event) => { 
+    submitForm(event);
+  });
 
   container.appendChild(background);
   container.appendChild(formDiv);
@@ -170,25 +189,29 @@ function createContactFormSection(){
         id: "name",
         placeholder: "Name",
         value: "",
-        type: "text"
+        type: "text",
+        required: true
       },
       {
         id: "email",
         placeholder: "Email",
         value: "",
-        type: "email"
+        type: "email",
+        required: true
       },
       {
         id: "phone",
         placeholder: "Phone",
         value: "",
-        type: "tel"
+        type: "tel",
+        required: false
       },
       {
         id: "message",
         placeholder: "Message",
         value: "",
-        type: "textarea"
+        type: "textarea",
+        required: false
       }
     ];
 
@@ -199,10 +222,29 @@ function createContactFormSection(){
       element.value = input.value; 
       element.type = input.type; 
       element.autocomplete = "on";
+      element.required = input.required;
+
       inputElements.push(element);
     };
   return inputElements;
   };
+}
+
+function createFormButton(){
+  const button = document.createElement("button");
+  button.className = "form-button";
+  button.type = "submit";
+  button.textContent = "SEND"
+  return button;
+}
+
+function submitForm(event){
+  event.preventDefault();
+  const form = event.target;
+
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData);
+  console.log(`Form data: ${data}`);
 }
 
 
@@ -211,6 +253,9 @@ function createMapSection(){
   const container = document.createElement("div");
   const iFrame = document.createElement("iframe");
   iFrame.src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyDMk2my1F3oAYkjzk02IepDdJ16LLK4RfI&q=Posillipo,+Napoli+NA/";
+
+  section.className = "iframe-section";
+  container.className = "iframe-container";
 
   container.appendChild(iFrame);
   section.appendChild(container);
